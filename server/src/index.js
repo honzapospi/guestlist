@@ -4,6 +4,14 @@ const restifyBodyParser = require('restify-plugins').bodyParser;
 
 const server = restify.createServer();
 
+server.use(
+    function crossOrigin(req,res,next){
+        res.header("Access-Control-Allow-Origin", "*");
+        res.header("Access-Control-Allow-Headers", "X-Requested-With");
+        return next();
+    }
+);
+
 const isAuthenticated = (req, res, next) => {
     next();
     // api.authenticate(req.headers.auth).then(result => {
