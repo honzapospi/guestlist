@@ -1,18 +1,20 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Guestlist from './guest/Guestlist.react';
+import 'bootstrap/dist/css/bootstrap.css';
+import GuestForm from './guest/GuestForm.react';
+import {Route, Link} from 'react-router-dom';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+          <ul>
+              <li><Link to="/">Home</Link></li>
+              <li><Link to="/new">New</Link></li>
+          </ul>
+          <Route path="/" exact component={Guestlist} />
+          <Route path="/new" component={GuestForm} />
       </div>
     );
   }
