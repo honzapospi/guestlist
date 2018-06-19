@@ -1,0 +1,16 @@
+{
+  "name": "guestlist",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon src/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "restify": "^7.2.1",
+    "restify-plugins": "^1.6.0"
+  }
+}
